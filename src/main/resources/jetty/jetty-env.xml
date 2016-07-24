@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+	<New id="dataSource" class="org.mortbay.jetty.plus.naming.Resource">
+		<Arg>jdbc/hecate</Arg>
+		<Arg>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">${hecate_dev_jdbc_driver}</Set>
+				<Set name="url">${hecate_dev_jdbc_url}</Set>
+				<Set name="username">${hecate_dev_jdbc_username}</Set>
+				<Set name="password">${hecate_dev_jdbc_password}</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>
